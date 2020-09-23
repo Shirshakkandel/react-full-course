@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="rootReact"></div>
+
+    <script>
+      //pure javascript way
+      let root = document.getElementById("root");
+      let el = document.createElement("h1");
+      el.className += "red";
+      el.innerText = "React by Shirshak kandel";
+      root.appendChild(el); //DOM node
+
+      //React way
+
+      console.log("React.createElement " + React.createElement);
+      let react = React.createElement("h1", null, "Shirshak kandel");
+      ReactDOM.render(react, document.getElementById("rootReact"));
+    </script>
+  </body>
+</html>
+
+<!-- Output 
+
+React by Shirshak kandel
+Shirshak kandel -->
+
+<!-- 
+    "React "contains following function like React.createelement
+    exports.Children = Children;
+exports.Component = Component;
+exports.Fragment = REACT_FRAGMENT_TYPE;
+exports.Profiler = REACT_PROFILER_TYPE;
+exports.PureComponent = PureComponent;
+exports.StrictMode = REACT_STRICT_MODE_TYPE;
+exports.Suspense = REACT_SUSPENSE_TYPE;
+exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals$1;
+exports.cloneElement = cloneElement$1;
+exports.createContext = createContext;
+exports.createElement = createElement$1;
+exports.createFactory = createFactory;
+exports.createRef = createRef;
+exports.forwardRef = forwardRef;
+exports.isValidElement = isValidElement;
+exports.lazy = lazy;
+exports.memo = memo;
+exports.useCallback = useCallback;
+exports.useContext = useContext;
+exports.useDebugValue = useDebugValue;
+exports.useEffect = useEffect;
+exports.useImperativeHandle = useImperativeHandle;
+exports.useLayoutEffect = useLayoutEffect;
+exports.useMemo = useMemo;
+exports.useReducer = useReducer;
+exports.useRef = useRef;
+exports.useState = useState;
+exports.version = ReactVersion; -->
+
+<!-- 
+    React Router dom contains following methods
+    exports.createPortal = createPortal$1;
+exports.findDOMNode = findDOMNode;
+exports.flushSync = flushSync;
+exports.hydrate = hydrate;
+exports.render = render;
+exports.unmountComponentAtNode = unmountComponentAtNode;
+exports.unstable_batchedUpdates = batchedUpdates$1;
+exports.unstable_createPortal = unstable_createPortal;
+exports.unstable_renderSubtreeIntoContainer = renderSubtreeIntoContainer;
+exports.version = ReactVersion; -->
