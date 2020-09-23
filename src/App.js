@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import "./App.css";
+
+function Home() {
+  return <h1>Home</h1>;
+}
+
+function About() {
+  return <h1>About</h1>;
+}
+
+function Great() {
+  const params = useParams();
+  console.log(params);
+  return <h1>Hello {params.name}</h1>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/greet/:name" component={Great} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
